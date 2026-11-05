@@ -1,0 +1,31 @@
+.Corpo_page_not{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.Corpo_page_not h1{
+    font-size: 5rem;
+    text-align: center;
+}
+
+.Corpo_page_not a{
+    padding: 0.5% 0;
+    width: 8%;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F48E28;
+    border-radius: 15px;
+    transition: all 500ms ease;
+}
+
+.Corpo_page_not a:hover{
+    transition: all 500ms ease;
+    background-color: #f7a14b;
+}

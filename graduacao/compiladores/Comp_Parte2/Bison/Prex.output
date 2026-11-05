@@ -1,0 +1,787 @@
+Terminals unused in grammar
+
+    PR_CONST
+    PR_BOOL
+    PR_CHAR
+    PR_LIST
+    PR_SE
+    PR_ENTAO
+    PR_SENAO
+    PR_ENQUANTO
+    PR_FACA
+    OPERADOR_IGUAL
+    OPERADOR_DIFERENTE
+    OPERADOR_MAIOR
+    OPERADOR_MENOR
+    OPERADOR_LOGICO_E
+    OPERADOR_LOGICO_OU
+    OPERADOR_LOGICO_NEGACAO
+    BOOL_FALSO
+    BOOL_VERDADEIRO
+    CHAR_LIT
+    LIST_SIZE
+
+
+Grammar
+
+    0 $accept: programa $end
+
+    1 programa: PR_PROG PR_PREX CHAVE_ESQUERDA bloco CHAVE_DIREITA
+
+    2 bloco: lista_declaracoes lista_comandos
+
+    3 lista_declaracoes: ε
+    4                  | lista_declaracoes declaracao
+
+    5 declaracao: PR_FLOAT lista_variaveis DELIMITADOR
+
+    6 lista_variaveis: lista_variaveis SEPARADOR IDENTIFICADOR
+    7                | IDENTIFICADOR
+
+    8 lista_comandos: ε
+    9               | lista_comandos comando
+
+   10 comando: comando_escrita
+   11        | comando_leitura
+   12        | comando_expressao
+
+   13 comando_escrita: PR_ESCREVER argumentos_escrita DELIMITADOR
+
+   14 argumentos_escrita: argumentos_escrita SEPARADOR IDENTIFICADOR
+   15                   | argumentos_escrita SEPARADOR CADEIA_DE_CARACTERES
+   16                   | IDENTIFICADOR
+   17                   | CADEIA_DE_CARACTERES
+
+   18 comando_leitura: PR_LER argumentos_leitura DELIMITADOR
+
+   19 argumentos_leitura: argumentos_leitura SEPARADOR IDENTIFICADOR
+   20                   | IDENTIFICADOR
+
+   21 comando_expressao: IDENTIFICADOR OPERADOR_ATRIB expressao DELIMITADOR
+
+   22 expressao: fator
+   23          | OPERADOR_SOMA fator somatorio
+   24          | OPERADOR_SUB fator sub_acomulada
+   25          | OPERADOR_MULT fator produtorio
+   26          | OPERADOR_DIV fator div_acomulada
+
+   27 somatorio: fator somatorio
+   28          | expressao
+
+   29 sub_acomulada: fator sub_acomulada
+   30              | expressao
+
+   31 produtorio: fator produtorio
+   32           | expressao
+
+   33 div_acomulada: fator div_acomulada
+   34              | expressao
+
+   35 fator: NUMERO_DE_PONTO_FLUTUANTE
+   36      | IDENTIFICADOR
+
+
+Terminals, with rules where they appear
+
+    $end (0) 0
+    error (256)
+    PR_PROG (258) 1
+    PR_PREX (259) 1
+    PR_CONST (260)
+    PR_BOOL (261)
+    PR_CHAR (262)
+    PR_FLOAT (263) 5
+    PR_LIST (264)
+    PR_SE (265)
+    PR_ENTAO (266)
+    PR_SENAO (267)
+    PR_ENQUANTO (268)
+    PR_FACA (269)
+    PR_LER (270) 18
+    PR_ESCREVER (271) 13
+    CHAVE_ESQUERDA (272) 1
+    CHAVE_DIREITA (273) 1
+    DELIMITADOR (274) 5 13 18 21
+    SEPARADOR (275) 6 14 15 19
+    OPERADOR_SOMA (276) 23
+    OPERADOR_SUB (277) 24
+    OPERADOR_MULT (278) 25
+    OPERADOR_DIV (279) 26
+    OPERADOR_IGUAL (280)
+    OPERADOR_DIFERENTE (281)
+    OPERADOR_MAIOR (282)
+    OPERADOR_MENOR (283)
+    OPERADOR_LOGICO_E (284)
+    OPERADOR_LOGICO_OU (285)
+    OPERADOR_LOGICO_NEGACAO (286)
+    OPERADOR_ATRIB (287) 21
+    BOOL_FALSO (288)
+    BOOL_VERDADEIRO (289)
+    IDENTIFICADOR <sval> (290) 6 7 14 16 19 20 21 36
+    CADEIA_DE_CARACTERES <sval> (291) 15 17
+    NUMERO_DE_PONTO_FLUTUANTE <fval> (292) 35
+    CHAR_LIT <cval> (293)
+    LIST_SIZE <ival> (294)
+
+
+Nonterminals, with rules where they appear
+
+    $accept (40)
+        on left: 0
+    programa (41)
+        on left: 1
+        on right: 0
+    bloco <sval> (42)
+        on left: 2
+        on right: 1
+    lista_declaracoes <sval> (43)
+        on left: 3 4
+        on right: 2 4
+    declaracao <sval> (44)
+        on left: 5
+        on right: 4
+    lista_variaveis <sval> (45)
+        on left: 6 7
+        on right: 5 6
+    lista_comandos <sval> (46)
+        on left: 8 9
+        on right: 2 9
+    comando <sval> (47)
+        on left: 10 11 12
+        on right: 9
+    comando_escrita <sval> (48)
+        on left: 13
+        on right: 10
+    argumentos_escrita <sval> (49)
+        on left: 14 15 16 17
+        on right: 13 14 15
+    comando_leitura <sval> (50)
+        on left: 18
+        on right: 11
+    argumentos_leitura <sval> (51)
+        on left: 19 20
+        on right: 18 19
+    comando_expressao <sval> (52)
+        on left: 21
+        on right: 12
+    expressao <sval> (53)
+        on left: 22 23 24 25 26
+        on right: 21 28 30 32 34
+    somatorio <sval> (54)
+        on left: 27 28
+        on right: 23 27
+    sub_acomulada <sval> (55)
+        on left: 29 30
+        on right: 24 29
+    produtorio <sval> (56)
+        on left: 31 32
+        on right: 25 31
+    div_acomulada <sval> (57)
+        on left: 33 34
+        on right: 26 33
+    fator <sval> (58)
+        on left: 35 36
+        on right: 22 23 24 25 26 27 29 31 33
+
+
+State 0
+
+    0 $accept: • programa $end
+
+    PR_PROG  shift, and go to state 1
+
+    programa  go to state 2
+
+
+State 1
+
+    1 programa: PR_PROG • PR_PREX CHAVE_ESQUERDA bloco CHAVE_DIREITA
+
+    PR_PREX  shift, and go to state 3
+
+
+State 2
+
+    0 $accept: programa • $end
+
+    $end  shift, and go to state 4
+
+
+State 3
+
+    1 programa: PR_PROG PR_PREX • CHAVE_ESQUERDA bloco CHAVE_DIREITA
+
+    CHAVE_ESQUERDA  shift, and go to state 5
+
+
+State 4
+
+    0 $accept: programa $end •
+
+    $default  accept
+
+
+State 5
+
+    1 programa: PR_PROG PR_PREX CHAVE_ESQUERDA • bloco CHAVE_DIREITA
+
+    $default  reduce using rule 3 (lista_declaracoes)
+
+    bloco              go to state 6
+    lista_declaracoes  go to state 7
+
+
+State 6
+
+    1 programa: PR_PROG PR_PREX CHAVE_ESQUERDA bloco • CHAVE_DIREITA
+
+    CHAVE_DIREITA  shift, and go to state 8
+
+
+State 7
+
+    2 bloco: lista_declaracoes • lista_comandos
+    4 lista_declaracoes: lista_declaracoes • declaracao
+
+    PR_FLOAT  shift, and go to state 9
+
+    $default  reduce using rule 8 (lista_comandos)
+
+    declaracao      go to state 10
+    lista_comandos  go to state 11
+
+
+State 8
+
+    1 programa: PR_PROG PR_PREX CHAVE_ESQUERDA bloco CHAVE_DIREITA •
+
+    $default  reduce using rule 1 (programa)
+
+
+State 9
+
+    5 declaracao: PR_FLOAT • lista_variaveis DELIMITADOR
+
+    IDENTIFICADOR  shift, and go to state 12
+
+    lista_variaveis  go to state 13
+
+
+State 10
+
+    4 lista_declaracoes: lista_declaracoes declaracao •
+
+    $default  reduce using rule 4 (lista_declaracoes)
+
+
+State 11
+
+    2 bloco: lista_declaracoes lista_comandos •
+    9 lista_comandos: lista_comandos • comando
+
+    PR_LER         shift, and go to state 14
+    PR_ESCREVER    shift, and go to state 15
+    IDENTIFICADOR  shift, and go to state 16
+
+    $default  reduce using rule 2 (bloco)
+
+    comando            go to state 17
+    comando_escrita    go to state 18
+    comando_leitura    go to state 19
+    comando_expressao  go to state 20
+
+
+State 12
+
+    7 lista_variaveis: IDENTIFICADOR •
+
+    $default  reduce using rule 7 (lista_variaveis)
+
+
+State 13
+
+    5 declaracao: PR_FLOAT lista_variaveis • DELIMITADOR
+    6 lista_variaveis: lista_variaveis • SEPARADOR IDENTIFICADOR
+
+    DELIMITADOR  shift, and go to state 21
+    SEPARADOR    shift, and go to state 22
+
+
+State 14
+
+   18 comando_leitura: PR_LER • argumentos_leitura DELIMITADOR
+
+    IDENTIFICADOR  shift, and go to state 23
+
+    argumentos_leitura  go to state 24
+
+
+State 15
+
+   13 comando_escrita: PR_ESCREVER • argumentos_escrita DELIMITADOR
+
+    IDENTIFICADOR         shift, and go to state 25
+    CADEIA_DE_CARACTERES  shift, and go to state 26
+
+    argumentos_escrita  go to state 27
+
+
+State 16
+
+   21 comando_expressao: IDENTIFICADOR • OPERADOR_ATRIB expressao DELIMITADOR
+
+    OPERADOR_ATRIB  shift, and go to state 28
+
+
+State 17
+
+    9 lista_comandos: lista_comandos comando •
+
+    $default  reduce using rule 9 (lista_comandos)
+
+
+State 18
+
+   10 comando: comando_escrita •
+
+    $default  reduce using rule 10 (comando)
+
+
+State 19
+
+   11 comando: comando_leitura •
+
+    $default  reduce using rule 11 (comando)
+
+
+State 20
+
+   12 comando: comando_expressao •
+
+    $default  reduce using rule 12 (comando)
+
+
+State 21
+
+    5 declaracao: PR_FLOAT lista_variaveis DELIMITADOR •
+
+    $default  reduce using rule 5 (declaracao)
+
+
+State 22
+
+    6 lista_variaveis: lista_variaveis SEPARADOR • IDENTIFICADOR
+
+    IDENTIFICADOR  shift, and go to state 29
+
+
+State 23
+
+   20 argumentos_leitura: IDENTIFICADOR •
+
+    $default  reduce using rule 20 (argumentos_leitura)
+
+
+State 24
+
+   18 comando_leitura: PR_LER argumentos_leitura • DELIMITADOR
+   19 argumentos_leitura: argumentos_leitura • SEPARADOR IDENTIFICADOR
+
+    DELIMITADOR  shift, and go to state 30
+    SEPARADOR    shift, and go to state 31
+
+
+State 25
+
+   16 argumentos_escrita: IDENTIFICADOR •
+
+    $default  reduce using rule 16 (argumentos_escrita)
+
+
+State 26
+
+   17 argumentos_escrita: CADEIA_DE_CARACTERES •
+
+    $default  reduce using rule 17 (argumentos_escrita)
+
+
+State 27
+
+   13 comando_escrita: PR_ESCREVER argumentos_escrita • DELIMITADOR
+   14 argumentos_escrita: argumentos_escrita • SEPARADOR IDENTIFICADOR
+   15                   | argumentos_escrita • SEPARADOR CADEIA_DE_CARACTERES
+
+    DELIMITADOR  shift, and go to state 32
+    SEPARADOR    shift, and go to state 33
+
+
+State 28
+
+   21 comando_expressao: IDENTIFICADOR OPERADOR_ATRIB • expressao DELIMITADOR
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    expressao  go to state 40
+    fator      go to state 41
+
+
+State 29
+
+    6 lista_variaveis: lista_variaveis SEPARADOR IDENTIFICADOR •
+
+    $default  reduce using rule 6 (lista_variaveis)
+
+
+State 30
+
+   18 comando_leitura: PR_LER argumentos_leitura DELIMITADOR •
+
+    $default  reduce using rule 18 (comando_leitura)
+
+
+State 31
+
+   19 argumentos_leitura: argumentos_leitura SEPARADOR • IDENTIFICADOR
+
+    IDENTIFICADOR  shift, and go to state 42
+
+
+State 32
+
+   13 comando_escrita: PR_ESCREVER argumentos_escrita DELIMITADOR •
+
+    $default  reduce using rule 13 (comando_escrita)
+
+
+State 33
+
+   14 argumentos_escrita: argumentos_escrita SEPARADOR • IDENTIFICADOR
+   15                   | argumentos_escrita SEPARADOR • CADEIA_DE_CARACTERES
+
+    IDENTIFICADOR         shift, and go to state 43
+    CADEIA_DE_CARACTERES  shift, and go to state 44
+
+
+State 34
+
+   23 expressao: OPERADOR_SOMA • fator somatorio
+
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    fator  go to state 45
+
+
+State 35
+
+   24 expressao: OPERADOR_SUB • fator sub_acomulada
+
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    fator  go to state 46
+
+
+State 36
+
+   25 expressao: OPERADOR_MULT • fator produtorio
+
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    fator  go to state 47
+
+
+State 37
+
+   26 expressao: OPERADOR_DIV • fator div_acomulada
+
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    fator  go to state 48
+
+
+State 38
+
+   36 fator: IDENTIFICADOR •
+
+    $default  reduce using rule 36 (fator)
+
+
+State 39
+
+   35 fator: NUMERO_DE_PONTO_FLUTUANTE •
+
+    $default  reduce using rule 35 (fator)
+
+
+State 40
+
+   21 comando_expressao: IDENTIFICADOR OPERADOR_ATRIB expressao • DELIMITADOR
+
+    DELIMITADOR  shift, and go to state 49
+
+
+State 41
+
+   22 expressao: fator •
+
+    $default  reduce using rule 22 (expressao)
+
+
+State 42
+
+   19 argumentos_leitura: argumentos_leitura SEPARADOR IDENTIFICADOR •
+
+    $default  reduce using rule 19 (argumentos_leitura)
+
+
+State 43
+
+   14 argumentos_escrita: argumentos_escrita SEPARADOR IDENTIFICADOR •
+
+    $default  reduce using rule 14 (argumentos_escrita)
+
+
+State 44
+
+   15 argumentos_escrita: argumentos_escrita SEPARADOR CADEIA_DE_CARACTERES •
+
+    $default  reduce using rule 15 (argumentos_escrita)
+
+
+State 45
+
+   23 expressao: OPERADOR_SOMA fator • somatorio
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    expressao  go to state 50
+    somatorio  go to state 51
+    fator      go to state 52
+
+
+State 46
+
+   24 expressao: OPERADOR_SUB fator • sub_acomulada
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    expressao      go to state 53
+    sub_acomulada  go to state 54
+    fator          go to state 55
+
+
+State 47
+
+   25 expressao: OPERADOR_MULT fator • produtorio
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    expressao   go to state 56
+    produtorio  go to state 57
+    fator       go to state 58
+
+
+State 48
+
+   26 expressao: OPERADOR_DIV fator • div_acomulada
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    expressao      go to state 59
+    div_acomulada  go to state 60
+    fator          go to state 61
+
+
+State 49
+
+   21 comando_expressao: IDENTIFICADOR OPERADOR_ATRIB expressao DELIMITADOR •
+
+    $default  reduce using rule 21 (comando_expressao)
+
+
+State 50
+
+   28 somatorio: expressao •
+
+    $default  reduce using rule 28 (somatorio)
+
+
+State 51
+
+   23 expressao: OPERADOR_SOMA fator somatorio •
+
+    $default  reduce using rule 23 (expressao)
+
+
+State 52
+
+   22 expressao: fator •
+   27 somatorio: fator • somatorio
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    $default  reduce using rule 22 (expressao)
+
+    expressao  go to state 50
+    somatorio  go to state 62
+    fator      go to state 52
+
+
+State 53
+
+   30 sub_acomulada: expressao •
+
+    $default  reduce using rule 30 (sub_acomulada)
+
+
+State 54
+
+   24 expressao: OPERADOR_SUB fator sub_acomulada •
+
+    $default  reduce using rule 24 (expressao)
+
+
+State 55
+
+   22 expressao: fator •
+   29 sub_acomulada: fator • sub_acomulada
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    $default  reduce using rule 22 (expressao)
+
+    expressao      go to state 53
+    sub_acomulada  go to state 63
+    fator          go to state 55
+
+
+State 56
+
+   32 produtorio: expressao •
+
+    $default  reduce using rule 32 (produtorio)
+
+
+State 57
+
+   25 expressao: OPERADOR_MULT fator produtorio •
+
+    $default  reduce using rule 25 (expressao)
+
+
+State 58
+
+   22 expressao: fator •
+   31 produtorio: fator • produtorio
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    $default  reduce using rule 22 (expressao)
+
+    expressao   go to state 56
+    produtorio  go to state 64
+    fator       go to state 58
+
+
+State 59
+
+   34 div_acomulada: expressao •
+
+    $default  reduce using rule 34 (div_acomulada)
+
+
+State 60
+
+   26 expressao: OPERADOR_DIV fator div_acomulada •
+
+    $default  reduce using rule 26 (expressao)
+
+
+State 61
+
+   22 expressao: fator •
+   33 div_acomulada: fator • div_acomulada
+
+    OPERADOR_SOMA              shift, and go to state 34
+    OPERADOR_SUB               shift, and go to state 35
+    OPERADOR_MULT              shift, and go to state 36
+    OPERADOR_DIV               shift, and go to state 37
+    IDENTIFICADOR              shift, and go to state 38
+    NUMERO_DE_PONTO_FLUTUANTE  shift, and go to state 39
+
+    $default  reduce using rule 22 (expressao)
+
+    expressao      go to state 59
+    div_acomulada  go to state 65
+    fator          go to state 61
+
+
+State 62
+
+   27 somatorio: fator somatorio •
+
+    $default  reduce using rule 27 (somatorio)
+
+
+State 63
+
+   29 sub_acomulada: fator sub_acomulada •
+
+    $default  reduce using rule 29 (sub_acomulada)
+
+
+State 64
+
+   31 produtorio: fator produtorio •
+
+    $default  reduce using rule 31 (produtorio)
+
+
+State 65
+
+   33 div_acomulada: fator div_acomulada •
+
+    $default  reduce using rule 33 (div_acomulada)

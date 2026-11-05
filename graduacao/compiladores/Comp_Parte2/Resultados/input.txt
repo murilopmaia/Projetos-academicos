@@ -1,0 +1,23 @@
+PROGRAMA PREX {
+	FLOAT var1, var2;
+	FLOAT soma, sub, mult, div, expr;
+
+	LER var1, var2;
+	
+	soma = + var1 var2;
+	sub = - var1 var2;
+	mult = * var1 var2;
+	div = / var1 var2;
+	expr = + var1 10,0 20,00 - 10,0 20,0 * var2 2,0;
+	expr = / expr 2,0;
+
+
+	ESCREVER "Var1: ", var1, "\n";
+	ESCREVER "Var2: ", var2, "\n";
+	ESCREVER "Soma: ", soma, "\n";
+	ESCREVER "Subtracao: ", sub, "\n";
+	ESCREVER "Multiplicacao: ", mult, "\n";
+	ESCREVER "Divisao: ", div, "\n";
+	ESCREVER "Expressao: ", expr, "\n";
+}
+

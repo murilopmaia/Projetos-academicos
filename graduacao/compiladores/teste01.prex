@@ -1,0 +1,21 @@
+PROGRAMA PREX {
+
+	FLOAT r1, r2, res;
+
+	LER r1, r2;
+
+	res = + r1 r2;
+	ESCREVER res;
+
+	res = * r1 r2;
+	ESCREVER res;
+
+	res = + r1 * -2,0 r2;
+	ESCREVER res;
+	
+	res = + r2 * 7,25 2,0; 
+	ESCREVER res;
+
+	res = + 2,0 4,25 12,25 1,0;
+	ESCREVER res;
+}

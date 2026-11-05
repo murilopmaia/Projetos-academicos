@@ -1,0 +1,147 @@
+.Comida{
+    
+    width: 90%;
+    max-width: 190px;
+    
+    display: flex;
+    
+    margin-top: 40px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+    gap: 10px;
+    height: 200px;
+    
+    position: relative;
+  }
+
+  .Cor_de_fundo{
+    background-color: white;
+    border-radius: 15%;
+    position: absolute;
+    top: 35px;
+    height:100%;
+    width: 100%;
+    z-index: -1;
+  }
+  
+  .Comida .Descri{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    font-size: 0.8rem;
+    max-width:150px ;
+    
+   
+    gap: 4px;
+  }
+
+  .Comida .Descri h4{
+    font-weight: bold;
+    font-size: 1.5rem;
+    max-width:150px ;
+    overflow-wrap:break-word;
+   
+  }
+  
+  .Comida .Price{
+    gap: 2px;
+    display: flex;
+    flex-direction: row;
+  }
+  
+  .Comida .Price .Red{
+    color: rgb(198, 0, 0);
+    font-weight: bold;
+  }
+  
+  .Comida img{
+    
+    height: 70%;
+    max-width: 200px;
+  }
+  
+  .Comida .Botoes{
+    width: 50%;
+    min-height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    gap: 20px;
+    
+  }
+  
+  .Comida .Botoes button{
+    border: 0;
+    cursor:pointer;
+    width: 100%;
+    height: 100%;
+    
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+  
+    transition: all 500ms ease;
+    border-radius: 100%;
+    font-size: 1.2rem;
+    
+  }
+  
+  .Comida .Botoes .es{
+    background-color: black;
+    color: white;
+    box-shadow: 0px 0px 25px rgba(131, 165, 255, 0.25);
+  }
+  
+  .Comida .Botoes .di{
+    background-color: white;
+    color: black;
+    box-shadow: 0px 0px 25px rgba(131, 165, 255, 0.25);
+  }
+  
+  .Comida .Botoes button:hover{
+    
+    transform: scale(1.1);
+  }
+
+  @media(max-width:990px){
+    .Comida{
+      max-width:150px ;
+    }
+    .Comida img{
+      max-width: 180px;
+    }
+  }
+
+ @media(max-width:833px){
+    .Comida{
+      max-width: 180px;
+    }
+    .Comida img{
+      max-width: 200px;
+    }
+ }
+
+ @media(max-width:580px){
+  .Comida{
+    max-width: 150px;
+  }
+ }
+
+ @media(max-width:420px){
+  .Comida{
+    max-width: 130px;
+    height: 180px;
+  }
+  .Comida img{
+    max-width: 130px;
+  }
+  .Comida .Descri h4{
+    font-size: 1.2rem;
+  }
+ }
+ 

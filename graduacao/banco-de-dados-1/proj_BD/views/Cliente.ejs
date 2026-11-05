@@ -1,0 +1,102 @@
+<%- include("head.ejs") -%>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>CatCoffe</title>
+</head>
+<style>
+    
+    body {
+            font-family: 'Roboto', sans-serif;
+            background-color: antiquewhite;
+        }
+        .space {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2em;
+            
+        }
+        .titulo {
+            background-color: rgba(7, 7, 7, 0.781);
+            width: 80%;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0em 0em 5em 5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: azure;
+        }
+        h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+        table th, table td {
+            padding: 1em;
+            text-align: center;
+        }
+    
+</style>
+<body>
+    <title>Café Felino</title>
+</head>
+<body class="container" style="background-color:azure">
+<div class="space">
+
+   
+    <div class="titulo"">
+        <h1>Clientes</h1>
+    </div>
+    <form action="" method="get" class="w-75">
+        <div class="form-group">
+            <label for="orderBy">Ordenar Por:</label>
+            <select  name="orderby" id="orderby" class="form-control">
+                    <option selected></option>
+                    <option value="CPF_Cliente">CPF_Cliente</option>
+                    <option value="Nome_Cliente">Nome</option>
+                    <option value="idade_Cliente">Idade</option>
+                    <option value="telefone_Cliente">Telefone</option>
+            </select>
+
+            
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Consultar</button>
+    </form>
+    <div >
+        <table class="table table-striped" border="3">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">CPF</th>
+                <th scope="col">Nome</th>
+                <th scope="col">Idade</th>
+                <th scope="col">Telefone</th>
+                <th class="d-print-none">
+                    <a class="btn btn-success" href="/inserirCl"><i class="fas fa-plus"></i> Cadastrar novo registro</a>
+                </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            <% for (var i=0; i < dados.length; i++) { %>
+            <tr>
+                <th><%= dados[i].CPF_Cliente %></th>
+                <td><%= dados[i].Nome_Cliente %></td>
+                <td><%= dados[i].idade_Cliente %> anos</td>
+                <td><%= dados[i].telefone_Cliente %></td>
+                <td class="d-print-none">
+                    <a class="btn btn-warning" href="/editarCl/<%= dados[i].CPF_Cliente %>"><i class="fas fa-edit"></i> Editar</a>
+                    <a class="btn btn-danger" href="/deletarCl/<%= dados[i].CPF_Cliente %>"><i class="fas fa-trash-alt"></i> Deletar</a>
+                </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+</body>
+</html>

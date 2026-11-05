@@ -1,0 +1,79 @@
+
+.form_div {
+    
+    width: 100vw; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0;
+    background-color: #f5f5f5; 
+}
+
+
+.form {
+    padding: 20px;
+    width: 90vw; 
+    max-width: 1000px; 
+    height: auto; 
+    background-color: #fff;
+    border-radius: 12px; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    box-sizing: border-box; 
+    
+}
+
+
+.form_input {
+    width: 100%; 
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fafafa; 
+    box-sizing: border-box; 
+    transition: border 0.3s ease, background-color 0.3s ease;
+}
+
+
+.form_input::placeholder {
+    color: #bbb;
+}
+
+
+.form_input:focus {
+    border-color: #101a74;
+    background-color: #fff; 
+    outline: none;
+}
+
+
+.form_button {
+    width: 100%; 
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    background-color: #101a74;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+/* Efeito de hover no botão */
+.form_button:hover {
+    background-color: #4651b1;
+}
+
+/* Estilo de mensagem de erro */
+.error {
+    color: #d32f2f;
+    font-size: 0.9rem;
+    font-weight: 500;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}

@@ -1,0 +1,79 @@
+<%- include("head.ejs") -%>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Combo</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: antiquewhite;
+        }
+        .space {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2em;
+        }
+        .titulo {
+            background-color: rgba(7, 7, 7, 0.781);
+            width: 80%;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0em 0em 5em 5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: azure;
+        }
+        h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+        table th, table td {
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="container" style="background-color: azure">
+    <div class="space">
+        <div class="titulo">
+            <h1>Editar Combo</h1>
+        </div>
+        <form action="/editarCo/<%=dados[0].Cod_Combo%>" method="post" style="width: 100%;">
+            <div style="display: flex; flex-direction: column; gap: 1em;">
+                <div>
+                    <label for="">Código do Combo</label>
+                    <input type="number" disabled="" name="Código do Combo" class="form-control" value="<%=dados[0].Cod_Combo%>" />
+                </div>
+                <div>
+                    <label for="">Bebida</label>
+                    <input type="text" name="Bebida" class="form-control" id="Bebida" value="<%=dados[0].Bebida%>" />
+                </div>
+                <div>
+                    <label for="">Comida</label>
+                    <input type="text" name="Comida" class="form-control" value="<%=dados[0].Comida%>" />
+                </div>
+                <div>
+                    <label for="Disponibilidade">Disponibilidade</label>
+                    <select name="Disponibilidade" class="form-control" value="<%=dados[0].Valor%>" />
+                        <option value="1">Disponível</option>
+                        <option value="0">Indisponível</option>
+                    </select>
+                </div>
+                <div>
+                    <label for="Valor">Preço</label>
+                    <input type="number" name="Valor" class="form-control" step="0.01" value="<%=dados[0].Valor%>" />
+                </div>
+                <br />
+            </div>
+            <input type="submit" class="btn btn-info" value="Editar" />
+            <a href="/Combos" class="btn btn-outline-primary btn-sm">Voltar</a>
+        </form>
+    </div>
+</body>
+</html>

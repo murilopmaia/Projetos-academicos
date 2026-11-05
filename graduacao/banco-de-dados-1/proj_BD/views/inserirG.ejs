@@ -1,0 +1,77 @@
+<%- include("head.ejs") -%>
+
+    <!DOCTYPE html>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: antiquewhite;
+        }
+
+        .space {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2em;
+
+        }
+
+        .titulo {
+            background-color: rgba(7, 7, 7, 0.781);
+            width: 80%;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0em 0em 5em 5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: azure;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        table th,
+        table td {
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+    <html lang="pt-br">
+
+    <body class="container" style="background-color: azure">
+        <div class="space">
+
+            <div class="titulo"">
+            <h1>Inserir Gatos</h1>
+        </div>
+       
+      <form action=" inserirG" method="post" style="width: 100%;">
+
+                <div style="display: flex; flex-direction: column; gap: 1em;">
+                    <div>
+                        <label for="">Nome</label>
+                        <input type="text" name="Nome_Gato" class="form-control" value="" />
+                    </div>
+                    <div>
+                        <label for="">Idade</label>
+                        <input type="number" name="idade_Gato" class="form-control" value="" />
+                    </div>
+                    <div>
+                        <label for="">Raça</label>
+                        <input type="text" name="raca" class="form-control" value="" />
+
+                    </div>
+                    <br />
+                </div>
+                <div>
+                    <input class="btn btn-primary" id="button1" type="submit" name="btIncuirPub" value="Inserir" />
+                    <a href="/Gatos" class="btn btn-outline-primary btn-sm">Voltar</a>
+                </div>
+                </form>
+            </div>
+    </body>
+
+    </html>

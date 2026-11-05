@@ -1,0 +1,99 @@
+.Corpo_produto{
+    min-width: 300px;
+    width: 30%;
+    border-radius: 30px;
+    overflow: hidden;
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1);
+    height: max-content;
+    height: 320px;
+    margin-top: 3%;
+}
+
+.Corpo_produto .Imagem_produto{
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Corpo_produto .Imagem_produto img{
+    width: 100%;
+    
+    
+}
+
+.Corpo_produto .Corpo_baixo{
+    
+    margin: 5%;
+    margin-bottom: 9%;
+    margin-top: 2%;
+    display: flex;
+    flex-direction: row;
+    
+    justify-content: space-between;
+}
+
+.Alinhar_produto_direita{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+    width: 80%;
+}
+
+.Alinhar_produto_direita h4{
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.Alinhar_produto_direita button{
+    transition: all 500ms ease;
+    border: 0;
+    background-color: #F48E28;
+    width: 35%;
+    max-height: 30px;
+    color: rgb(215, 211, 211);
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5% 0%;
+    font-size: 0.7rem;
+    border-radius: 35px;
+
+
+}
+
+.Alinhar_produto_esquerda{
+    display: flex;
+
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    
+}
+
+.Estrela{
+    display: flex;
+    flex-direction: row;
+    gap: 4px;
+}
+
+.Estrela p{
+    font-size: 0.8rem;
+}
+
+.Alinhar_produto_direita button:hover{
+    transition: all 500ms ease;
+    background-color: rgb(190, 186, 174);
+    box-shadow: 0px 2px 30px rgba(0, 0, 0, 0.1);
+    transform: scale(1.1);
+    color: black;
+    cursor: pointer;
+
+
+}

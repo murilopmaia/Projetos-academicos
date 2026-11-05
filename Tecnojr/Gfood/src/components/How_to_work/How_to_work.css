@@ -1,0 +1,130 @@
+.How_corpo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    width: 100%;
+}
+
+.How_corpo img{
+    width: 75%;
+}
+
+.How_corpo p{
+    font-size: 0.9rem;
+}
+
+.How_titulo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.How_titulo p{
+    color: #F48E28;
+}
+
+.How_titulo h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.How_infos{
+    
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+}
+
+.How_esquerdo{
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: 30px;
+    text-align: start;
+}
+
+.How_esquerdo h4{
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.Nome_bolinha_esquerdo{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    align-items: center;
+    
+}
+
+.Nome_bolinha_meio{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.Bolinha{
+    width: 12px;
+    height: 12px;
+    border-radius: 100%;
+    background-color: #F48E28;
+}
+
+
+.How_meio{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+    text-align: center;
+    justify-content: center;
+}
+
+.How_meio h4{
+    
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.How_direito{
+    display: flex;
+    flex-direction: column;
+    align-items: end;
+    gap: 20px;
+    text-align: end;
+    justify-content: end;
+}
+
+.How_direito h4{
+    
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.Nome_bolinha_direito{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 2%;
+    align-items: center;
+    justify-content: end;
+    
+}
+
+@media(max-width:620px){
+    .How_infos p{
+        font-size: 0.7rem;
+    }
+    .How_infos h4{
+        font-size: 1rem;
+    }
+}

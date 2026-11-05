@@ -1,0 +1,147 @@
+.Corpo_NewsLetter{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 14%;
+    align-items: center;
+    position: relative;
+    height: 350px;
+    
+}
+
+.Fundo_NewsLetter{
+    width: 100%;
+    height: 70%;
+    background-color: black;
+    position: absolute;
+    border-radius: 40px;
+    z-index: -111;
+}
+
+
+
+.Infos_letter{
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    width: 35%;
+    display: flex;
+    flex-direction: column;
+    gap: 6%;
+    color: white;
+}
+
+
+
+
+.input_text{
+    width: 80%;
+    border: 0;
+    background-color: white;
+    
+}
+
+.input_text:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.Infos_letter form{
+    width: 100%;
+}
+
+.Infos_letter label{
+    
+    background-color: white;
+    padding: 2% 1% 2% 3%;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    gap: 6%;
+    width: 100%;
+}
+
+.input_submit{
+    padding: 3% 4%;
+    border: 0;
+    color: white;
+    border-radius: 11px;
+    background-color: #F48E28;
+    transition: all 500ms ease;
+}
+
+.input_submit:hover{
+    cursor: pointer;
+    color: gray;
+    transition: all 500ms ease;
+}
+
+.Infos_letter h3{
+    font-size: 1.8rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+.Infos_letter p{
+    font-size: 0.8rem;
+    text-align: start;
+}
+
+@media(max-width:755px){
+    .Infos_letter{
+        width: 30%;
+    }
+    .Corpo_NewsLetter{
+        gap: 10%;
+    }
+    .Corpo_NewsLetter img{
+        width: 35%;
+    }
+    .Infos_letter p{
+        font-size: 0.7rem;
+        
+    }
+    .Infos_letter h3{
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-align: center;
+    }
+}
+
+@media(max-width:735px){
+    .Corpo_NewsLetter{
+        gap: 8%;
+    }
+    .Corpo_NewsLetter img{
+        width: 30%;
+    }
+    .Infos_letter h3{
+        font-size: 1.5rem;
+        font-weight: bold;
+        text-align: center;
+    }
+    .Infos_letter{
+        width: 50%;
+    }
+}
+
+@media(max-width:490px){
+    .Corpo_NewsLetter{
+        flex-direction: column;
+        gap: 3%;
+    }
+    .Corpo_NewsLetter IMG{
+        width: 40%;
+    }
+    .Fundo_NewsLetter{
+        height: 100%;
+        width: 80%;
+    }
+    .Infos_letter{
+        width: 60%;
+    }
+    .input_text::placeholder{
+        font-size: 0.7rem;
+    }
+}

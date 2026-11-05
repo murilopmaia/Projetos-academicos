@@ -1,0 +1,160 @@
+
+.Corpo_SignUp {
+  width: 100vw;
+  height: 100vh;
+  min-height: 721.60px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.Imagem_SignUp {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -30;
+  position: absolute;
+}
+
+.Filtro_Signup {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: -20;
+  backdrop-filter: blur(4px);
+}
+
+.Centro_SignUp {
+  width: 65%;
+  height: 80%;
+
+  border: white 2px solid;
+  border-radius: 30px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: row;
+}
+
+.SignUp {
+  width: 62%;
+  height: 100%;
+
+  display: flex;
+  background: rgba(245, 245, 245, 0.774);
+
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8%;
+}
+
+.SignUp h1 {
+  color: #f48e28;
+  font-size: 3rem;
+}
+
+.SignUp form {
+  height: 40%;
+  width: 70%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30%;
+}
+
+.SignUp form .Cadastro_SignUp {
+  color: black;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 30%;
+}
+
+.SignUp form .Cadastro_SignUp label {
+  width: 80%;
+}
+
+.SignUp form .Cadastro_SignUp input {
+  width: 100%;
+  height: 80%;
+  background: transparent;
+  border-radius: 30px;
+  text-align: center;
+}
+
+.SignUp form .Cadastro_SignUp input:focus {
+  outline: 0;
+}
+
+.ERRO_SignUp {
+  border: red 2px solid;
+}
+
+.SignUp form .SignUp_Login {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  gap: 8%;
+}
+
+.SignUp form .SignUp_Login input {
+  transition: all 500ms ease;
+  width: 80%;
+  height: 100%;
+  padding: 3% 0% 3% 0%;
+  color: white;
+  font-weight: bold;
+  font-size: 1.1rem;
+  background-color: #f48e28;
+  border-radius: 30px;
+}
+
+.SignUp form .SignUp_Login p {
+  font-size: 0.8rem;
+  color: rgb(6, 113, 113);
+}
+
+.SignUp form .SignUp_Login input:hover {
+  transition: all 500ms ease;
+  cursor: pointer;
+  color: gray;
+  box-shadow: black 1px 1px;
+}
+
+.SignUp form .SignUp_Login p:hover {
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.Imagem_lateral_SignUp {
+  width: 45%;
+  height: 100%;
+  overflow: hidden;
+}
+
+@media(max-width:1117px){
+  .Centro_SignUp{
+      width: 75%;
+  }
+}
+
+@media(max-width:955px){
+  .Centro_SignUp{
+      width: 90%;
+  }
+}
+
+@media(max-width:700px){
+  .Imagem_lateral_SignUp{
+      display: none;
+  }
+  .SignUp{
+      width: 100%;
+  }
+}

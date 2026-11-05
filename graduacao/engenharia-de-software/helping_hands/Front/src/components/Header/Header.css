@@ -1,0 +1,44 @@
+
+.app-header {
+   background-color: #FEE38AA8; 
+    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  align-items: center;
+  color: white;
+}
+
+.logo-container {
+  display: flex;
+  align-items: center;
+  background: linear-gradient(#E65100, #C24500, #9F3901);
+  width: 100%;
+  justify-content: center;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-radius: 0rem 0rem 20rem 20rem;
+}
+
+.nav-icons{
+    display: flex;
+    flex-direction: row;
+    gap: 4rem;
+}
+
+.nav-icons img {
+  width: 36px;
+  height: 32px;
+  padding: 1.5rem;
+}
+
+.nav-icons img:hover {
+  background-color: #9F39014D;
+  cursor: pointer;
+}
+
+
+.logo-image{
+    width: 281px;
+    height: 104.27px;
+}

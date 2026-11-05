@@ -1,0 +1,58 @@
+.sort-controls-container {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+  margin-bottom: 25px; 
+  padding-left: 5px; 
+}
+
+.sort-by-label {
+  font-size: 1.2em;
+  font-weight: 500;
+  color: #555;
+  margin-right: 5px;
+}
+
+.sort-button {
+  padding: 6px 12px;
+  border: 1px solid #FFDAB9; 
+  border-radius: 20px; 
+  background-color: #FFF9E6; 
+  color: #E67E22;
+  font-size: 0.9em;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.sort-button.icon-button {
+  padding: 6px 8px; 
+  background-color: #FFF0C9; 
+  border-color: #FFE082;
+}
+
+.sort-button span[role="img"] {
+  font-size: 1.1em; 
+}
+
+.sort-button:hover {
+  background-color: #FFE0B2; 
+  border-color: #FFCC80;
+}
+
+.sort-button.active {
+  background-color: #FFA500; 
+  color: white;
+  border-color: #FFA500;
+}
+
+.sort-button.icon-button.active {
+    background-color: #FFC107; 
+    border-color: #FFC107;
+}
+
+.service-cards-list p {
+  text-align: start;
+  color: #535252;
+
+}

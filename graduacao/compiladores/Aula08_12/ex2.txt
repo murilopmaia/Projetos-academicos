@@ -1,0 +1,29 @@
+
+ -> O que é um analisador Léxico?
+ -> O que é um token?
+ -> Forneça exemplos
+
+Um analisador léxico, também conhecido como scanner ou lexer, 
+é uma parte fundamental de um compilador ou interpretador de linguagens de programação. 
+Sua principal função é processar o código-fonte e transformá-lo em uma sequência de tokens.
+
+Funções principais do analisador léxico:
+    Entrada e saída:
+
+        Entrada: Código-fonte como uma sequência de caracteres.
+        Saída: Uma sequência de tokens, que são unidades sintáticas como palavras-chave, 
+        identificadores, operadores, literais, etc.
+    Processo:
+
+        O analisador léxico lê o código-fonte caractere por caractere.
+        Ele agrupa esses caracteres em unidades significativas (tokens) 
+        de acordo com as regras da linguagem de programação.
+        Durante esse processo, ele também pode ignorar espaços em branco e comentários, 
+        pois não são necessários para a análise sintática.
+    Exemplos de tokens:
+
+        Palavras-chave: if, else, while, return
+        Identificadores: Nomes de variáveis, funções, etc. Exemplo: x, minhaFuncao
+        Operadores: +, -, *, =
+        Literais: Valores constantes, como números (123, 4.56), strings ("hello"), etc.
+

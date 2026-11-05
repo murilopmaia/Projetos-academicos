@@ -1,0 +1,1 @@
+Derivada Centrada = 0.046156000000000086

@@ -1,0 +1,4 @@
+y = -709699.5332555426 + 362.48541423570595*x
+"Desvio padrao" = 651.7627117584608
+Coeficiente de determinacao = 0.9380714256274743
+Coeficiente de Correlacao = 0.9685408745259408

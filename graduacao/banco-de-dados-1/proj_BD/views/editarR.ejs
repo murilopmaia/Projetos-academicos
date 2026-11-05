@@ -1,0 +1,156 @@
+<%- include("head.ejs") -%>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Reserva</title>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: antiquewhite;
+        }
+        .space {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2em;
+        }
+        .titulo {
+            background-color: rgba(7, 7, 7, 0.781);
+            width: 80%;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0em 0em 5em 5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: azure;
+        }
+        h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+        table th, table td {
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+</head>
+<body class="container" style="background-color: azure">
+    <div class="space">
+        <div class="titulo">
+            <h1>Editar Reserva</h1>
+        </div>
+        <form action="/editarR/<%=dados[0].Cod_Reserva%>" method="post" style="width: 100%;">
+            <div style="display: flex; flex-direction: column; gap: 1em;">
+                <div>
+                    <label for="">Código Reserva</label>
+                    <input type="number" disabled="" name="Código Reserva" class="form-control" value="<%=dados[0].Cod_Reserva%>" />
+                </div>
+                <div>
+                    <label for="horario_inicio">Horario Início</label>
+                    <input type="datetime-local" name="horario_inicio" class="form-control" id="horario_inicio" data-value="<%=dados[0].horario_inicio%>" />
+                </div>
+                <div>
+                    <label for="">Horario Fim</label>
+                    <input type="datetime-local" name="horario_fim" class="form-control" id="horario_fim" data-value="<%=dados[0].horario_fim%>" />
+                </div>
+                <div>
+                    <label for="">Status Pagamento</label>
+                    <input type="text" name="Status_Pagamento" class="form-control" value="<%=dados[0].Status_Pagamento%>" />
+                </div>
+                <div>
+                    <label for="">Numero da Mesa</label>
+                    <input type="number" name="Numero_Mesa" class="form-control" value="<%=dados[0].Numero_Mesa%>" />
+                </div>
+                <br />
+            </div>
+            <hr style="background-color: orange; height: 0.05em;">
+            <div style="display: flex; flex-direction: column; gap: 1em;">
+                <h4>Registros Relacionados</h4>
+                <div>
+                    <label for="">Cliente Relacionado</label>
+                    <select name="CPF_Cliente" id="CPF_Cliente">
+                        <option value="<%=dados[0].CPF_Cliente%>">
+                            <%=dados[0].CPF_Cliente%> - <%=dados[0].Nome_Cliente%>
+                        </option>
+                        <% dados1.forEach(dado=> { %>
+                            <option value="<%=dado.CPF_Cliente%>">
+                                <%=dado.CPF_Cliente%> - <%=dado.Nome_Cliente%>
+                            </option>
+                        <% }) %>
+                    </select>
+                    <a class="btn btn-warning" href="/editarCl/<%= dados[0].CPF_Cliente %>"><i class="fas fa-edit"></i></a>
+                </div>
+                <div>
+                    <label for="">Combo Relacionado</label>
+                    <select name="Cod_Combo" id="Cod_Combo">
+                        
+                        <option value="<%=dados[0].Cod_Combo%>">
+                            <%=dados[0].Cod_Combo%>
+                        </option>
+                        
+                        <% dados2.forEach(dado=> { %>
+                            <option value="<%=dado.Cod_Combo%>">
+                                <%=dado.Cod_Combo%>
+                            </option>
+                        <% }) %>
+                        <option value="NULL">Nenhum</option>
+                    </select>
+                    <a class="btn btn-warning" href="/editarCo/<%= dados[0].Cod_Combo %>"><i class="fas fa-edit"></i></a>
+                </div>
+                <div>
+                    <label for="">Gato Relacionado</label>
+                    <select name="Cod_Gato" id="Cod_Gato">
+                        
+                        <option value="<%=dados[0].Cod_Gato%>">
+                            <%=dados[0].Cod_Gato%> - <%=dados[0].Nome_Gato%>
+                        </option>
+                        
+                        <% dados3.forEach(dado=> { %>
+                            <option value="<%=dado.Cod_Gato%>">
+                                <%=dado.Cod_Gato%> - <%=dado.Nome_Gato%>
+                            </option>
+                        <% }) %>
+                        <option value="NULL">Nenhum</option>
+                    </select>
+                    <a class="btn btn-warning" href="/editarG/<%= dados[0].Cod_Gato %>"><i class="fas fa-edit"></i></a>
+                </div>
+                <br />
+            </div>
+            <input type="submit" class="btn btn-info" value="Editar" />
+            <a href="/" class="btn btn-outline-primary btn-sm">Voltar</a>
+        </form>
+    </div>
+    <script>
+        function formatDateTime(dateString) {
+            const date = new Date(dateString);
+            const year = date.getFullYear();
+            const month = String(date.getMonth() + 1).padStart(2, '0');
+            const day = String(date.getDate()).padStart(2, '0');
+            const hours = String(date.getHours()).padStart(2, '0');
+            const minutes = String(date.getMinutes()).padStart(2, '0');
+            return `${year}-${month}-${day}T${hours}:${minutes}`;
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const horarioInicioInput = document.getElementById('horario_inicio');
+            const originalValue = horarioInicioInput.getAttribute('data-value');
+            if (originalValue) {
+                horarioInicioInput.value = formatDateTime(originalValue);
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const horarioInicioInput = document.getElementById('horario_fim');
+            const originalValue = horarioInicioInput.getAttribute('data-value');
+            if (originalValue) {
+                horarioInicioInput.value = formatDateTime(originalValue);
+            }
+        });
+    </script>
+</body>
+</html>

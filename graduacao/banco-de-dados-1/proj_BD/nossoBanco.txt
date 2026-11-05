@@ -1,0 +1,79 @@
+create database CatCoffe;
+
+
+
+create table Reserva(
+	Cod_Reserva int auto_increment primary key,
+    CPF_ClienteFK varchar(15),
+    Cod_GatoFK int,
+    Cod_ComboFK int,
+    horario_inicio datetime,
+    horario_fim datetime,
+    Status_Pagamento varchar(20),
+    Numero_Mesa int,
+    foreign key(CPF_ClienteFK) references Cliente(CPF_Cliente)
+    on delete cascade,
+    foreign key(Cod_GatoFK) references Gato(Cod_Gato)
+    on delete set null,
+    foreign key(Cod_ComboFK) references Combo(Cod_Combo)
+    on delete set null
+);
+
+create table Combo(
+	Cod_Combo int auto_increment primary Key,
+    Bebida varchar(100),
+    Comida varchar(100),
+    Disponibilidade boolean,
+    Valor float
+);
+
+
+create table Gato(
+	Cod_Gato int auto_increment primary key ,
+    Nome_Gato varchar(20),
+    raca varchar(20),
+    idade_Gato int
+);
+
+create table Cliente(
+	CPF_Cliente varchar(15) primary key,
+	Nome_Cliente varchar(50),
+    idade_Cliente int,
+    telefone_Cliente varchar(15)
+);
+
+
+insert into Reserva(Cod_Reserva,CPF_ClienteFK,Cod_GatoFK,Cod_ComboFK,horario_inicio,horario_fim,Status_Pagamento,Numero_Mesa) 
+values(87,'872.332.498-27',15, 12, '2024-05-24 13:00:00','2024-05-24 14:00:00', 'Pago', 55);
+insert into Reserva(Cod_Reserva,CPF_ClienteFK,Cod_GatoFK,Cod_ComboFK,horario_inicio,horario_fim,Status_Pagamento,Numero_Mesa)  
+values(95,'438.975.498-30',19, 12, '2024-06-01 09:45:00','2024-06-01 14:00:00', 'Pendente', 66);
+insert into Reserva(Cod_Reserva,CPF_ClienteFK,Cod_GatoFK,Cod_ComboFK,horario_inicio,horario_fim,Status_Pagamento,Numero_Mesa) 
+values(99,'748.924.328-97',20, 16, '2024-6-05 13:00:00','2024-06-01 20:00:00', 'Pendente', 55);
+
+insert into Gato(Cod_Gato,Nome_Gato,raca,idade_Gato) values(15,'Peludinho', 'Siamês',1);
+insert into Gato(Cod_Gato,Nome_Gato,raca,idade_Gato) values(17,'Chocolate', 'Persa',2);
+insert into Gato(Cod_Gato,Nome_Gato,raca,idade_Gato) values(19,'Nutella', 'Sphinx',1);
+insert into Gato(Cod_Gato,Nome_Gato,raca,idade_Gato) values(20,'Carlos', 'Laranja',5);
+
+insert into Cliente(CPF_Cliente,Nome_Cliente,idade_Cliente,telefone_Cliente) 
+values('872.332.498-27','João Pedro Neto da Silva', 25,'9 9876-8767');
+insert into Cliente(CPF_Cliente,Nome_Cliente,idade_Cliente,telefone_Cliente) 
+values('438.975.498-30','Roberto Alves da Cruz', 18,'9 8757-5434');
+insert into Cliente(CPF_Cliente,Nome_Cliente,idade_Cliente,telefone_Cliente) 
+values('748.924.328-97','Amanda Aurélia Krugger', 29,'9 5435-8765');
+
+insert into Combo(Cod_Combo,Bebida,Comida,disponibilidade,valor) 
+values(12,'Um capuccino com gelo de chocolate médio','Porção com 5 pais de queijo normais ou 3 pães de queijos recheados', true ,22.00);
+insert into Combo(Cod_Combo,Bebida,Comida,disponibilidade,valor) 
+values(13,'Dois cafés médios (pode ser quente ou frio)','Dois sanduíches clássicos',true,30.00);
+insert into Combo(Cod_Combo,Bebida,Comida,disponibilidade,valor) 
+values(14,'Um Frappé premium grande', 'Um pudim pequeno e um sanduíche de croissant',true,25.00);
+insert into Combo(Cod_Combo,Bebida,Comida,disponibilidade,valor) 
+values(15,'3 cafés premium médios', '3 fatias do bolo do dia e uma porção grande de pão de queijo recheado',false ,40.00);
+insert into Combo(Cod_Combo,Bebida,Comida,disponibilidade,valor) 
+values(16,'Um café clássico pequeno', 'Um salgado pequeno',true ,15.00);
+insert into Combo(Cod_Combo,Bebida,Comida,disponibilidade,valor)
+values(17,'Dois cappucinos pequenos', 'Duas fatias da torta salgada do dia', false,25.00);
+
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'Senha';
+flush privileges;

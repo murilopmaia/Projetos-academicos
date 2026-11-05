@@ -1,0 +1,52 @@
+.Corpo_erro_404{
+    width: 100vw;
+    height: 100vh;
+    min-height: 721.60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+.Imagem_sad{
+    width: 15%;
+    min-width: 200px;
+}
+
+
+.Corpo_erro_404 .Descri_erro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+}
+
+.Corpo_erro_404 .Descri_erro h1{
+    color: #F48E28;
+    font-size: 7em;
+}
+
+.Corpo_erro_404 .Descri_erro p{
+    text-align: center;
+    font-size: 0.8rem;
+
+}
+
+.Corpo_erro_404 a{
+    padding: 0.5% 0;
+    width: 8%;
+    min-width: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #F48E28;
+    
+    transition: all 500ms ease;
+}
+
+.Corpo_erro_404 a:hover{
+    transition: all 500ms ease;
+    background-color: #f7a14b;
+}

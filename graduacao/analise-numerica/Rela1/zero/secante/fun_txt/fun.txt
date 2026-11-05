@@ -1,0 +1,5 @@
+erro = 0.001
+x1 = 1
+x2 = 5
+funcao = ln(x) - x + 2
+

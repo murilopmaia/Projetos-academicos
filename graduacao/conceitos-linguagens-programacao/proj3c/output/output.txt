@@ -1,0 +1,5 @@
+LIT 0 1
+LIT 0 2
+LIT 0 3
+OPR 0 4
+OPR 0 2

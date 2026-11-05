@@ -1,0 +1,332 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#max{
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#topo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+    
+}
+
+#logo{
+    background-color: rgba(137, 43, 226, 0.854);
+    border-radius: 0px 0px 20px 20px;
+    padding: 0px 2px;
+}
+
+#nick{
+    display: flex;
+    background-color: rgba(137, 43, 226, 0.854);
+    height: 30px;
+    justify-content: center;
+    width: 50%;
+    align-items: center;
+   
+    
+}
+
+#outros{
+    background-color: rgba(137, 43, 226, 0.854);
+    width: 50%;
+    height: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10%;
+    
+    
+}
+
+#outros a{
+    transition: all 500ms ease;
+    padding: 0px 5px;
+    border-bottom:1px dotted black;
+    border-right: 1px dotted black;
+    border-radius: 15px;
+}
+
+#outros a:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px black;
+}
+
+
+#back{
+    background-image: url(http://trumpwallpapers.com/wp-content/uploads/League-Of-Legends-Wallpaper-16-3840-x-2160.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+#icone{
+    transition: all 500ms ease;
+
+}
+
+#corpo{
+    transition: all 500ms ease;
+    background-color: white;
+    width: 60%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    box-shadow: 5px 5px black;
+    gap: 40px;
+}
+
+#cabeca{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid black;
+    padding: 10px 0px;
+    border-radius: 20px;
+    background: linear-gradient(rgba(137, 43, 226, 0.854),white);
+    box-shadow: 2px 3px black;
+    text-align: center;
+    
+}
+
+#titulo{
+    transition: all 500ms ease;
+    font-size: 1.5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+
+}
+
+#historia_texto{
+    transition: all 1s ease;
+    opacity: 0; 
+    font-size: 1.2em;
+    max-height: 0px;
+    overflow: hidden;
+}
+
+#historia{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+   
+    
+}
+
+#estatisticas_tudo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 5px;
+    
+    
+}
+
+#titulo_historia{
+    width: 50%;
+    background: linear-gradient(rgba(137, 43, 226, 0.854),white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#estatisticas_titulo{
+    width: 50%;
+    padding: 5px;
+    background: linear-gradient(rgba(137, 43, 226, 0.854),white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 20px;
+}
+
+#historia:hover #historia_texto{
+    
+    transition: all 1s ease;
+    max-height: 400px;
+    opacity: 1;    
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+.habilidade_tudo{
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    border: 2px solid blueviolet;
+    border-radius: 10px;
+    padding: 5px;
+    box-shadow: 3px 5px blueviolet;
+}
+
+.habilidade{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: center;
+}
+
+.nome_habilidades{
+    color: rgba(158, 79, 232, 0.854);
+    border-bottom: 1px solid blueviolet;
+    font-size: 1.05em;
+}
+
+
+
+.div_estat{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+.div_estat_tudo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+.estat{
+    color: blueviolet;
+}
+
+#classe{
+    font-size: 0.7em;
+}
+
+#estatisticas{
+    transition: all 1s ease;
+    opacity: 0;
+    max-height: 0px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+}
+
+#estatisticas_tudo:hover #estatisticas{
+    transition: all 1s ease;
+    max-height: 900px;
+    opacity: 1;
+
+}
+
+
+
+.dados_estatisticas{
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    padding: 0px 5px;
+    border-bottom:1px dotted black;
+    border-right: 1px dotted black;
+    border-radius: 15px;
+     
+}
+
+.dicas_aliados_tudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgb(80, 57, 212),white);
+    border-radius: 20px;
+    min-height: 200px;
+    gap: 50px;
+    
+}
+
+.dicas{
+    background-color: aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 70%;
+    border-radius: 30px;
+    padding: 50px 20px;
+}
+
+.titulo_dicas{
+    border-bottom: 4px dotted black;
+    border-left: 4px dotted black;
+    border-right: 4px dotted black;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    padding: 0px 5px;
+    padding-top: 10px;
+}
+
+.sumir{
+    display: none;
+}
+
+.dicas_inimigos_tudo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(rgb(208, 65, 81),white);
+    border-radius: 20px;
+    min-height: 200px;
+    gap: 50px;
+}
+
+ul{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+@media (max-width:800px){
+    #corpo{
+        transition: all 500ms ease;
+        width: 80%;
+    }
+    #icone  {
+        transition: all 500ms ease;
+        width: 90px;
+        height: 101px;
+    }
+    #titulo{
+        transition: all 500ms ease;
+        font-size: 1.3em;
+    }
+}
+
+
+
+

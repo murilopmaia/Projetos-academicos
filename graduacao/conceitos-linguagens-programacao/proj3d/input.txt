@@ -1,0 +1,7 @@
+PUSH(c)
+PUSH(d)
+y=POP(); x=POP(); PUSH(x DIV y)
+PUSH(d)
+PUSH(e)
+y=POP(); x=POP(); PUSH(x MUL y)
+y=POP(); x=POP(); PUSH(x ADD y)

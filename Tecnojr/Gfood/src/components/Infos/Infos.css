@@ -1,0 +1,68 @@
+.Informa{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-around;
+    align-items: center;
+    
+    
+    background: #FFFFFF;
+    box-shadow: 0px 0px 50px rgba(0, 0, 0, 0.05);
+    border-radius: 50px;
+
+}
+
+.Instru{
+    padding-top: 2%;
+    padding-bottom: 2%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    
+
+}
+
+.Linha{
+    height: 90px;
+    width: 1px;
+    background-color: #B6B6B6;
+}
+
+.Instru h5{
+    font-size: 1rem;
+}
+
+.Instru p{
+    font-size: 0.7rem;
+}
+
+.Instru img{
+    background-color: #F48E28;
+    padding: 3%;
+    border-radius: 100%;
+}
+
+@media(max-width:635px){
+    .Instru h5{
+        font-size: 0.65rem;
+    }
+    
+    .Instru p{
+        font-size: 0.65rem;
+    }
+}
+
+@media(max-width:470px){
+    .Linha{
+        width: 90px;
+        height: 1px;
+    }
+    .Informa{
+        flex-direction: column;
+        width: 50%;
+        gap: 20px;
+        padding: 5% 0 5% 0;
+        border: #f4b576 1px solid;
+    }
+}

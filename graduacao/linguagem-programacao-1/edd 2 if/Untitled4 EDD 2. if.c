@@ -1,0 +1,27 @@
+int main (void){
+
+    float media;
+    float nota1;
+    float nota2;
+    float nota3;
+    float nota4;
+
+
+    printf("informe as 4 notas do aluno\n");
+    scanf("%f %f %f %f",&nota1 , &nota2, &nota3, &nota4);
+
+    media = (float) (nota1 + nota2 + nota3 + nota4)/4;
+
+    if (media >=7){
+
+        printf("\no aluno foi aprovado com media de %.2f\n",media);
+    }
+    else {
+
+        printf("\no aluno reprovou com media de %.2f\n",media);
+
+    }
+
+    return 0;
+
+}

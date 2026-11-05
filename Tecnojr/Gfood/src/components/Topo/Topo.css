@@ -1,0 +1,265 @@
+
+
+.Corpo_topo{
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+
+}
+
+.Esquerdo{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+    width: 50%;
+    
+}
+
+.Bike_delivery{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    background-color: #F5DDC4;
+    width: max-content;
+    align-items: center;
+    gap: 60px;
+    border-radius: 31.5px;
+    
+    padding: 1% 1% 1% 5%;
+    color:  #F48E28;
+}
+
+.Bike{
+    background-color: #FFFFFF;
+    border-radius: 100%;
+
+}
+
+.Texto_central{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    font-size: 2.2rem;
+
+}
+
+.Texto_linha{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    
+}
+
+.Texto_linha .Texto_cor{
+    color: #F48E28;
+}
+
+.Mini_texto{
+    max-width: 500px;
+    font-size: 1rem;
+}
+
+.Botoes{
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+    
+}
+
+.Botoes .Bot_esquerdo{
+    bottom: unset;
+    border: 0;
+    background:  linear-gradient(180deg, #EFAB68 0%, #F48E28 100%);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0% 10%;
+    font-size: 1rem;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    transition: all 500ms ease;
+    text-align: center;
+}
+
+.Botoes .Bot_esquerdo:hover{
+    transition: all 500ms ease;
+    transform: scale(1.05);
+}
+
+
+.Textos{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.Botoes .Alinhar{
+   
+    width: 40%;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5%;
+    gap: 8px;
+    font-size: 1.2rem;
+    align-items: center;
+}
+
+.Botoes .Alinhar .Bot_direito{
+    bottom: unset;
+    border: 0;
+    border-radius: 100%;
+    padding: 3% 3% 1% 4%;
+    background-color: #FFFFFF;
+    box-shadow: 0px 0px 25px rgba(131, 165, 255, 0.25);
+    transition: all 500ms ease;
+}
+
+.Botoes .Alinhar .Bot_direito:hover{
+    transition: all 500ms ease;
+    cursor: pointer;
+    background-color: #D9D9D9;
+}
+
+.Direito{
+    
+    padding-top: 5%;
+    width: 40%;
+    max-height: 560px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+    border-radius: 30px;
+    
+    position: relative;
+   
+    
+}
+
+.fundo_cinza{
+    background: linear-gradient(199.75deg, #D9D9D9 -18.39%, rgba(217, 217, 217, 0) 89.51%);
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    right: 0;
+    z-index: -1;
+    border-radius: 30px;
+}
+
+.Direito .Cima{
+    display: flex;
+    
+    
+    flex-direction: row;
+    gap: 20px;
+    height: 70%;
+    
+}
+
+.Direito .Baixo{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    height: 70%;
+}
+
+@media(max-width:1030px){
+    .Corpo_topo{
+        gap: 50px;
+        
+    }
+}
+
+
+@media(max-width:913px){
+    .Texto_central{
+        font-size: 2rem;
+    }
+}    
+
+@media(max-width:833px){
+    .Corpo_topo{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+    .Esquerdo{
+        width: 75%;
+        gap: 60px;
+        
+    }
+    .Direito{
+        width: 75%;
+        align-items: center;
+        justify-content: center;
+        
+    }
+    .Direito .Cima{
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 15%;
+    }
+    
+    .Direito .Baixo{
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        gap: 15%;
+    }
+
+    .fundo_cinza{
+        width: 80%;
+        
+        
+        
+    }
+}
+
+@media(max-width:700px){
+    .Corpo_topo{
+        margin-top: 30%;
+    }
+}
+
+@media(max-width:420px){
+    .Corpo_topo{
+        margin-top: 40%;
+    }
+    
+    
+    .Direito{
+        display: none;
+    }
+    
+    .Esquerdo{
+        width: 100%;
+    }
+}
+
+@media(max-width:580px){
+    .Texto_central{
+        font-size: 1.5rem;
+    }
+    .Direito .Cima{
+        width: 100%;
+        gap: 15%;
+    }
+    .Direito{
+        width: 85%;
+    }
+    .Direito .Baixo{
+        width: 100%;
+        gap: 15%;
+    }
+
+    .fundo_cinza{
+        width: 80%;
+        
+    }
+}

@@ -1,0 +1,4 @@
+fun = x*ln(x)
+a = 1
+b = 3
+grau = 2

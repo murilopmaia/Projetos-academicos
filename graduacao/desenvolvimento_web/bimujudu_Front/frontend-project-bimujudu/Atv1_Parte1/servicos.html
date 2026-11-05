@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Listagem de Serviços</title>
+    <link rel="stylesheet" href="./css/servicos.css">
+    
+</head>
+<body>
+    <div class="header_nav">
+        <header>
+            <img src="./imgs/logo.png" alt="Logo">
+        </header>
+    
+        <nav>
+            <ul>
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a class="atual" href="#">Serviços</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+                <li><a href="./registrar.html">Registrar</a></li>
+            </ul>
+        </nav>
+    </div>
+    
+
+    <main>
+        <div class="add-item">
+            <button onclick="adicionarItem()">Adicionar Serviço</button>
+        </div>
+
+        <div class="card-container" id="card-container">
+            <div class="card" data-id="1">
+                <h3>Serviço 1</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="actions">
+                    <button onclick="editarItem(1)">Editar</button>
+                    <button onclick="excluirItem(1)">Excluir</button>
+                    <button onclick="visualizarItem(1)">Detalhes</button>
+                </div>
+            </div>
+            <div class="card" data-id="2">
+                <h3>Serviço 2</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="actions">
+                    <button onclick="editarItem(2)">Editar</button>
+                    <button onclick="excluirItem(2)">Excluir</button>
+                    <button onclick="visualizarItem(2)">Detalhes</button>
+                </div>
+            </div>
+            <div class="card" data-id="3">
+                <h3>Serviço 3</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                <div class="actions">
+                    <button onclick="editarItem(3)">Editar</button>
+                    <button onclick="excluirItem(3)">Excluir</button>
+                    <button onclick="visualizarItem(3)">Detalhes</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="div_footer">
+            <p>2024</p>
+            <p style="color: rgba(0,212,255,1);">GoTogheter</p>
+            <p>Todos os direitos reservados.</p>
+        </div>
+    </footer>       
+    <script src="./js/servicos.js"></script>
+</body>
+</html>

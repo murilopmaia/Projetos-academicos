@@ -1,0 +1,313 @@
+/* src/App.css */
+
+/* --- Estilos para a Página de Agendamento --- */
+.scheduling-page {
+  padding: 20px;
+}
+
+.provider-info-bar {
+  display: flex;
+  align-items: center;
+  gap: 15px; 
+  background-color: transparent; 
+  box-shadow: none; 
+  padding: 0; 
+  margin-top: 25px;
+  margin-left: 30px;
+}
+
+.provider-name-pill {
+  background-color: #EF762F; 
+  color: white;
+  font-weight: bold;
+  font-size: 1.1em;
+  padding: 10px 25px;
+  border-radius: 30px; 
+  flex-shrink: 0; 
+}
+
+.month-date-selector{
+  background-color: #FEE38A;
+  padding: 15px 30px;
+}
+
+.provider-actions {
+  display: flex;
+  align-items: center;
+  gap: 10px; 
+}
+
+.action-icon-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;  
+  height: 40px; 
+  border-radius: 50%; 
+  cursor: pointer;
+  transition: transform 0.2s;
+  background-color: #FEE38AA8
+}
+
+.action-icon-circle:hover {
+  transform: scale(1.1);
+}
+
+.action-icon-circle img {
+  width: 22px;  
+  height: 22px;
+}
+
+
+.action-icon-circle .blue-question-mark {
+  color: #007BFF; 
+  font-size: 1.5em;
+  font-weight: bold;
+  line-height: 1; 
+}
+
+.scheduler-container {
+  display: flex;
+  background-color: #FFFBEA;
+  padding: 30px;
+  border-radius: 25px;
+  gap: 40px;
+}
+
+/* Coluna da Esquerda */
+.time-selection-column {
+  flex: 1;
+}
+
+.month-selector {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+  color: #d9534f;
+  font-size: 1.2em;
+}
+
+.date-scroller {
+  display: flex;
+  gap: 10px;
+  padding-bottom: 20px;
+  overflow-x: auto; /* Permite rolagem horizontal */
+}
+
+.date-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 20px;
+  min-width: 60px;
+  height: 80px;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.date-item span {
+  font-size: 0.8em;
+  color: #777;
+}
+.date-item strong {
+  font-size: 1.5em;
+  color: #333;
+}
+
+.date-item.selected {
+  background-color: #E65100;
+  color: white;
+  border-color: #E65100;
+}
+
+.date-item.selected span, .date-item.selected strong {
+  color: white;
+}
+
+.available-time-title {
+  color: #d9534f;
+  margin: 20px 0;
+}
+
+.time-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  gap: 15px;
+}
+
+.time-slot {
+  background-color: #FEE38A;
+  border: none;
+  color: #000000;
+  padding: 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.time-slot.selected {
+  background-color: #E65100;
+  color: white;
+  box-shadow: 0 0 10px rgba(217, 83, 79, 0.5);
+  transform: scale(1.05);
+}
+
+/* Coluna da Direita */
+.patient-form-column {
+  flex: 1;
+  background-color: #fff;
+  padding: 25px;
+  border-radius: 20px;
+  display: flex;
+  
+  flex-direction: column;
+}
+
+.patient-form-column h3 {
+  color: #E87A43; /* Laranja do título */
+  font-weight: bold;
+  font-size: 1.2em;
+  margin-bottom: 20px;
+}
+
+/* Abas de seleção de paciente */
+.patient-type-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 25px;
+}
+
+.patient-type-tabs button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: 1.5px solid #E87A43;
+  background-color: #FFF;
+  color: #E87A43;
+}
+
+.patient-type-tabs button.active {
+  background-color: #E87A43;
+  color: white;
+  border-color: #E87A43;
+}
+
+/* Formulário e seus campos */
+.patient-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex-grow: 1; /* Faz o formulário crescer para empurrar os botões para baixo */
+}
+
+.patient-form label {
+  font-weight: 500;
+  font-size: 0.9em;
+  color: #555;
+  margin-bottom: -10px;
+}
+
+.patient-form input[type="text"],
+.patient-form input[type="number"] {
+  width: 90%;
+  padding: 14px 18px;
+  border: none;
+  border-radius: 25px;
+  background-color: #FDF0D5; /* Amarelo/Laranja claro do fundo */
+  font-size: 1em;
+  color: #BF6D30; /* Cor do texto no input */
+}
+
+.patient-form input::placeholder {
+  color: #D4A276;
+}
+
+/* Opções de gênero */
+.gender-options {
+  display: flex;
+  gap: 10px;
+  margin-top: 5px;
+}
+
+.gender-options .gender-btn {
+  padding: 8px 18px;
+  border-radius: 20px;
+  cursor: pointer;
+  font-weight: 500;
+  transition: all 0.2s ease-in-out;
+  border: 1.5px solid #E87A43;
+  background-color: #FFF;
+  color: #E87A43;
+}
+
+.gender-options .gender-btn.active {
+  background-color: #E87A43;
+  color: white;
+  border-color: #E87A43;
+}
+
+/* Linha separadora */
+.form-separator {
+  width: 100%;
+  height: 1px;
+  background-color: #E87A43;
+  margin: 15px 0;
+}
+
+/* Área de texto */
+.patient-form textarea {
+  width: 90%;
+  padding: 14px 18px;
+  border: 1.5px solid #E87A43;
+  border-radius: 20px;
+  background-color: #FFF;
+  font-size: 1em;
+  height: 120px;
+  resize: vertical;
+}
+
+/* Botões de Ação no final do formulário */
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 15px;
+  margin-top: 25px;
+}
+
+.form-actions button {
+  padding: 12px 30px;
+  border-radius: 30px;
+  border: none;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.form-actions button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.2);
+}
+
+.form-actions .cancel-btn {
+  background-color: #D9534F; /* Vermelho */
+}
+
+.form-actions .confirm-btn {
+  background-color: #0275D8; /* Azul */
+}
+
+@media (max-width: 990px) {
+  .scheduler-container { 
+    flex-direction: column; 
+  }
+
+}

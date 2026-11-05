@@ -1,0 +1,3 @@
+Derivada Progressiva = 33.72999999999998
+Derivada Retardada = 30.329999999999984
+Derivada Centrada = 32.02999999999998

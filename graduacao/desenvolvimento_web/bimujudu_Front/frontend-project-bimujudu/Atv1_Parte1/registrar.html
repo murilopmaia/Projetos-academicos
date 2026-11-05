@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulário</title>
+    <link rel="stylesheet" href="./css/registrar.css">
+</head>
+
+<body>
+    <div class="header_nav">
+        <header>
+            <img src="./imgs/logo.png" alt="Logo">
+
+        </header>
+
+        <nav>
+            <ul>
+                <li><a href="./index.html">Início</a></li>
+                <li><a href="./sobre.html">Sobre</a></li>
+                <li><a href="./servicos.html">Serviços</a></li>
+                <li><a href="./contato.html">Contato</a></li>
+                <li><a class="atual" href="#">Registrar</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <main>
+        <div class="card">
+            <h1>Registre-se</h1>
+            <form id="form">
+                <label for="name">Nome:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+
+                <label for="phone">Telefone:</label>
+                <input type="tel" id="phone" name="phone" pattern="\(\d{2}\) \d{5}-\d{4}" placeholder="(XX) XXXXX-XXXX"
+                    required>
+
+                <label for="password">Senha:</label>
+                <input type="password" id="password" name="password" required>
+
+                <label for="options">Opções:</label>
+                <select id="options" name="options" required>
+                    <option value="">Selecione uma opção</option>
+                    <option value="option1">Serviço 1</option>
+                    <option value="option2">Serviço 2</option>
+                    <option value="option2">Serviço 3</option>
+                </select>
+
+                <label>Gênero:</label>
+                <div class="gender">
+                    <input type="radio" id="male" name="gender" value="male" required>
+                    <label for="male">Masculino</label>
+                    <input type="radio" id="female" name="gender" value="female" required>
+                    <label for="female">Feminino</label>
+                    <input type="radio" id="other" name="gender" value="other" required>
+                    <label for="other">Outro</label>
+                </div>
+                <br>
+
+                <label for="message">Sugestão:</label>
+                <textarea id="message" name="message" required></textarea>
+                <br>
+
+                <div>
+                    <input type="checkbox" id="subscribe" name="subscribe" required>
+                    <label for="subscribe">Declaro que li e aceito os termos de uso.</label>
+                </div>
+                <br>
+                <button type="submit">Enviar</button>
+            </form>
+            <div id="success-message" style="display:none; color: green;">Formulário enviado com sucesso!</div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="div_footer">
+            <p>2024</p>
+            <p style="color: rgba(0,212,255,1);">GoTogheter</p>
+            <p>Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <script src="./js/registrar.js"></script>
+</body>
+
+</html>

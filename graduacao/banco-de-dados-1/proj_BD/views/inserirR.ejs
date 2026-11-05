@@ -1,0 +1,132 @@
+<%- include("head.ejs") -%>
+
+    <!DOCTYPE html>
+    <style>
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: antiquewhite;
+        }
+
+        .space {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2em;
+
+        }
+
+        .titulo {
+            background-color: rgba(7, 7, 7, 0.781);
+            width: 80%;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0em 0em 5em 5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: azure;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+
+        table th,
+        table td {
+            padding: 1em;
+            text-align: center;
+        }
+    </style>
+    <html lang="pt-br">
+
+    <body class="container" style="background-color: azure">
+        <div class="space">
+
+            <div class="titulo"">
+            <h1>Inserir Reserva</h1>
+        </div>
+       
+      <form action=" inserirR" method="post" style="width: 100%;">
+
+                <div style="display: flex; flex-direction: column; gap: 1em;">
+                    <div>
+                        <label for="">Horario Início</label>
+                        <input type="datetime-local" name="horario_inicio" class="form-control" value="" />
+                    </div>
+                    <div>
+                        <label for="">Horario Fim</label>
+                        <input type="datetime-local" name="horario_fim" class="form-control" value="" />
+                    </div>
+                    <div>
+                        <label for="">Status Pagamento</label>
+                        <input type="text" name="Status_Pagamento" class="form-control" value="" />
+                    </div>
+                    <div>
+                        <label for="">Numero da Mesa</label>
+                        <input type="number" name="Numero_Mesa" class="form-control" value="" />
+
+                    </div>
+                    <br />
+                </div>
+
+
+
+                <hr style="background-color: orange; height: 0.05em;">
+                <div style="display: flex; flex-direction: column; gap: 1em;">
+                    <h4>Registros Relacionados</h4>
+                    <div>
+                        <label for="">Cliente Relacionado</label>
+                        <select name="CPF_Cliente" id="CPF_Cliente">
+                            <% dados1.forEach(dado=> { %>
+
+                                <option value="<%=dado.CPF_Cliente%>">
+                                    <%=dado.CPF_Cliente%> - <%=dado.Nome_Cliente%>
+                                </option>
+                                <% })%>
+                        </select>
+                        <a class="btn btn-success" href="/inserirCl"><i class="fas fa-plus" style="height: max-content;"></i></a>
+                    </div>
+
+                    <div>
+                        <label for="">Combo Relacionado</label>
+
+                        <select name="Cod_Combo" id="Cod_Combo">
+                                <option value="NULL">Nenhum</option>
+                            <% dados2.forEach(dado=> { %>
+
+                                <option value="<%=dado.Cod_Combo%>">
+                                    <%=dado.Cod_Combo%>
+                                </option>
+                                <% })%>
+                        </select>
+                        <a class="btn btn-success" href="/inserirCo"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <div>
+                        <label for="">Gato Relacionado</label>
+
+                        <select name="Cod_Gato" id="Cod_Gato">
+                            <option value="NULL">Nenhum</option>
+                            <% dados3.forEach(dado=> { %>
+
+                                <option value="<%=dado.Cod_Gato%>">
+                                    <%=dado.Cod_Gato%> - <%=dado.Nome_Gato%>
+                                </option>
+                                <% })%>
+                        </select>
+                        <a class="btn btn-success" href="/inserirG"><i class="fas fa-plus"></i></a>
+                    </div>
+                    <br />
+                    
+                    
+                </div>
+                <div>
+                    <input class="btn btn-primary" id="button1" type="submit" name="btIncuirPub" value="Inserir" />
+                    <a href="/" class="btn btn-outline-primary btn-sm">Voltar</a>
+                </div>
+                </form>
+            </div>
+    </body>
+
+    </html>

@@ -1,0 +1,211 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: "Trebuchet MS", Helvetica, sans-serif;
+}
+
+#max{
+    width: 90%;
+    max-width: 1150px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 25px;
+}
+
+#topo{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    
+    
+}
+
+#logo{
+    background-color: rgba(137, 43, 226, 0.854);
+    border-radius: 0px 0px 20px 20px;
+    padding: 0px 2px;
+}
+
+#nick{
+    display: flex;
+    background-color: rgba(137, 43, 226, 0.854);
+    width: 50%;
+    justify-content: center;
+    height: 30px;
+    align-items: center;
+    
+
+    
+    
+}
+
+#outros{
+    background-color: rgba(137, 43, 226, 0.854);
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30px;
+    gap: 15%;
+}
+
+#outros a{
+    transition: all 500ms ease;
+    padding: 0px 5px;
+    border-bottom:1px dotted black;
+    border-right: 1px dotted black;
+    border-radius: 15px;
+}
+
+#outros a:hover{
+    transform: scale(1.1);
+    box-shadow: 2px 2px black;
+}
+
+#back{
+    background-image: url(http://trumpwallpapers.com/wp-content/uploads/League-Of-Legends-Wallpaper-16-3840-x-2160.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+
+
+#corpo{
+    transition: all 500ms ease;
+    background-color: white;
+    width: 70%;
+    height: 100%;
+    border-radius: 20px;
+    padding: 20px;
+    border: 2px solid black;
+    display: flex;
+    flex-wrap: wrap; /* basicamente, coloque tudo la dentro enquanto estiver espaço*/
+    justify-content: center;
+    gap: 2px;
+    box-shadow: 5px 5px black;
+    overflow: hidden;
+    
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+#escolha{
+    transition: all 500ms ease;
+    display: flex;
+    width: 25%;
+    
+}
+
+
+
+#escreva{
+    text-align: center;
+    border-radius: 20px;
+    width: 100%;
+}
+
+#botao{
+    transition: all 500ms ease;
+    padding: 2px;
+    border-radius: 20px;
+}
+
+#botao:hover{
+    transform:scale(1.5)
+}
+
+.champ{
+    transition: all 1s ease;
+    display: flex;
+    flex-direction: row;
+    padding: 30px;
+    border-radius: 35%;
+    overflow: hidden;
+
+}
+
+.champ:hover{
+    transform: scale(1.05);
+    
+}
+
+.Max_Tam{
+    width: 366.42px;
+    height: 414.33px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.skin{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}
+
+.sumir{
+    transition: all 500ms ease;
+    display: none;
+}
+
+.botao_troca{
+    transition: all 500ms ease;
+    background: none;
+    border: none;
+    max-width: 0;
+    max-height: 0;
+    overflow: hidden;
+    
+}
+
+.champ:hover .botao_troca{
+    transition: all 500ms ease;
+    max-width: 500px;
+    max-height: 500px;
+    padding: 20px;
+    background: none;
+    border: none;
+    font-size: 2.5em;
+}
+
+.botao_troca p{
+    transition: all 500ms ease;
+}
+
+ .botao_troca:hover p{
+    transform: scale(2);
+}
+
+.skin h3 {
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 100%;
+    border-bottom:1px solid black ;
+    padding-bottom: 10px;
+    max-width: 165px;
+
+}
+
+@media (max-width:1215px){
+    #corpo{
+        
+        width: 90%;
+    }
+    #escolha{
+        transition: all 500ms ease;
+        width: 50%;
+    }
+}
+

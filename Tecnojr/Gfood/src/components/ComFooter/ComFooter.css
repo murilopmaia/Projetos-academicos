@@ -1,0 +1,124 @@
+
+.Corpo_footer{
+    width: 100%;
+    background-color: #FAFAFF;
+    padding-top: 50px;
+    padding-bottom: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer{
+    width: 70%;
+    display: flex;
+    flex-wrap: wrap;
+    
+    justify-content: center;
+    gap: 70px;
+    
+}
+
+.Corpo_div{
+    
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    width: 15%;
+    min-width: 150px;
+}
+
+  .Corpo_div p{
+    font-size: 0.8rem;
+    color: #B6B6B6;
+}
+
+.Redes_soc{
+    display: flex;
+    flex-direction: row;
+    gap: 3%;
+}
+
+  .Corpo_div h4{
+    font-size: 1.2rem;
+    font-weight:bold ;
+}
+
+.Text_footer{
+    display: flex;
+    flex-direction: column;
+    gap: 7px;
+}
+
+.div_logo{
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    min-width: none;
+}
+
+.div_logo p{
+    font-size: 0.8rem;
+    color: #B6B6B6;
+}
+
+.Corpo_div .Text_footer a{
+    text-decoration: none;
+}
+
+.Corpo_div .Text_footer a:hover{
+    text-decoration:underline;
+}
+
+.Corpo_div label{
+    
+    padding: 4%;
+    width: 120%;
+    display: flex;
+    flex-direction: row;
+    gap: 3px;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.05);
+    border-radius: 32.5px;
+}
+
+.Corpo_div label .in_text{
+    background-color: white;
+    font-size: 0.7rem;
+    color: #B6B6B6;
+    border: 0;
+    width: 100%;
+}
+
+.Corpo_div label .in_text::placeholder{
+    font-size: 0.7rem;
+    color: #B6B6B6;
+}
+
+.Corpo_div label .in_text:focus{
+    box-shadow: 0 0 0 0;
+    outline: 0;
+}
+
+.Corpo_div label .in_submit{
+    padding: 5% 7%;
+    border: 0;
+    background-color: #F48E28;
+    color: white;
+    border-radius: 100%;
+    transition: all 500ms ease;
+}
+
+.Corpo_div label .in_submit:hover{
+    transition: all 500ms ease;
+    color: gray;
+    cursor: pointer;
+}
+
+.Footer_contato{
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+

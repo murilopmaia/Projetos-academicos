@@ -1,0 +1,120 @@
+<%- include("head.ejs") -%>
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<title>CatCoffe</title>
+</head>
+<style>
+    
+    body {
+            font-family: 'Roboto', sans-serif;
+            background-color: antiquewhite;
+        }
+        .space {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            gap: 2em;
+            
+        }
+        .titulo {
+            background-color: rgba(7, 7, 7, 0.781);
+            width: 80%;
+            padding-top: 3em;
+            padding-bottom: 3em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0em 0em 5em 5em;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            color: azure;
+        }
+        h1 {
+            margin: 0;
+            font-weight: 700;
+        }
+        table th, table td {
+            padding: 1em;
+            text-align: center;
+        }
+    
+</style>
+<body>
+    <title>Café Felino</title>
+</head>
+<body class="container" style="background-color:azure">
+<div class="space">
+
+   
+    <div class="titulo">
+        <h1>Reservas</h1>
+    </div>
+    <form action="" method="get" class="w-75">
+        <div class="form-group">
+            <label for="orderBy">Ordenar Por:</label>
+            <select  name="orderby" id="orderby" class="form-control">
+                    <option selected></option>
+                    <option value="Cod_Reserva">Código Reserva</option>
+                    <option value="CPF_ClienteFK">Código Cliente</option>
+                    <option value="Numero_Mesa">Mesa</option>
+                    <option value="Cod_GatoFK">Código Gato</option>
+                    <option value="Cod_ComboFK">Código Combo</option>
+                    <option value="Status_Pagamento">Status Pagamento</option>
+                    <option value="horario_inicio">Horário Início</option>
+                    <option value="horario_fim">Horário Fim</option>
+            </select>
+
+            
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Consultar</button>
+    </form>
+    <div >
+        <table class="table table-striped" border="3">
+            <thead class="thead-dark">
+            <tr>
+                <th scope="col">Código Reserva</th>
+                <th scope="col">Código Cliente</th>
+                <th scope="col">Código Gato</th>
+                <th scope="col">Código Combo</th>
+                <th scope="col">Horário Início</th>
+                <th scope="col">Horário Fim</th>
+                <th scope="col">Status do Pagamento</th>
+                <th scope="col">Mesa</th>
+                <th class="d-print-none">
+                    <a class="btn btn-success" href="/inserirR"><i class="fas fa-plus"></i> Cadastrar novo registro</a>
+                </th>
+                </tr>
+            </thead>
+            
+            <tbody>
+            <% for (var i=0; i < dados.length; i++) { %>
+            <tr>
+                <th><%= dados[i].Cod_Reserva %></th>
+                <td><%= dados[i].CPF_ClienteFK %></td>
+                <td><%= dados[i].Cod_GatoFK %></td>
+                <td><%= dados[i].Cod_ComboFK %></td>
+                <% 
+                    const date = new Date();
+                    const options = { year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit' };
+                    const formattedDate = new Intl.DateTimeFormat('pt-BR', options).format(dados[i].horario_inicio);
+                    const formattedDate2 = new Intl.DateTimeFormat('pt-BR', options).format(dados[i].horario_fim);
+                %>
+                <td><%= formattedDate %></td>
+                <td><%= formattedDate2 %></td>
+                <td><%= dados[i].Status_Pagamento %></td>
+                <td><%= dados[i].Numero_Mesa %></td>
+                <td class="d-print-none">
+                    <a class="btn btn-warning" href="/editarR/<%= dados[i].Cod_Reserva%>"><i class="fas fa-edit"></i> Editar</a>
+                    <a class="btn btn-danger" href="/deletarR/<%= dados[i].Cod_Reserva %>"><i class="fas fa-trash-alt"></i> Deletar</a>
+                </td>
+            </tr>
+            <% } %>
+            </tbody>
+        </table>
+    </div>
+    
+</div>
+</body>
+</html>
